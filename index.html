@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Himadri Raj Graphics — creative graphic design services, social media designs, posters, banners, logos and more.">
+  <meta name="theme-color" content="#0b1220">
+  <title>Himadri Raj Graphics | Creative Graphic Design</title>
+
+  <style>
+    :root{
+      --bg:#07101f;
+      --bg2:#0b1628;
+      --card:#101d31;
+      --card2:#13233a;
+      --text:#f7f9fc;
+      --muted:#a9b6c8;
+      --blue:#2f80ff;
+      --blue2:#56b4ff;
+      --line:rgba(255,255,255,.10);
+      --shadow:0 18px 50px rgba(0,0,0,.28);
+      --radius:20px;
+      --max:1120px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:
+        radial-gradient(circle at 85% 10%, rgba(47,128,255,.18), transparent 28%),
+        radial-gradient(circle at 10% 30%, rgba(86,180,255,.08), transparent 25%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .wrap{width:min(92%,var(--max));margin:auto}
+
+    /* NAV */
+    header{
+      position:sticky;top:0;z-index:1000;
+      background:rgba(7,16,31,.82);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      min-height:72px;display:flex;align-items:center;justify-content:space-between;
+      gap:20px;
+    }
+    .brand{display:flex;align-items:center;gap:11px;font-weight:800}
+    .brand-mark{
+      width:40px;height:40px;border-radius:12px;
+      display:grid;place-items:center;
+      background:linear-gradient(135deg,var(--blue),var(--blue2));
+      color:white;font-size:18px;font-weight:900;
+      box-shadow:0 8px 25px rgba(47,128,255,.25);
+    }
+    .brand span{font-size:16px}
+    .nav-links{display:flex;gap:25px;color:var(--muted);font-size:14px}
+    .nav-links a:hover{color:white}
+    .menu{display:none;background:none;border:0;color:white;font-size:26px}
+
+    /* HERO */
+    .hero{padding:92px 0 72px}
+    .hero-grid{
+      display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center;
+    }
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:7px 12px;border:1px solid rgba(86,180,255,.25);
+      background:rgba(47,128,255,.08);border-radius:999px;
+      color:#9dd5ff;font-size:13px;font-weight:700;margin-bottom:20px;
+    }
+    h1{
+      font-size:clamp(42px,7vw,76px);line-height:1.02;
+      letter-spacing:-2.5px;margin-bottom:22px;
+    }
+    h1 .accent{
+      background:linear-gradient(90deg,#fff,var(--blue2));
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+    }
+    .hero p{font-size:18px;color:var(--muted);max-width:650px}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:9px;
+      min-height:48px;padding:0 20px;border-radius:12px;
+      font-weight:800;border:1px solid var(--line);transition:.2s;
+    }
+    .btn-primary{background:linear-gradient(135deg,var(--blue),#2563eb);color:#fff}
+    .btn-secondary{background:rgba(255,255,255,.04);color:#fff}
+    .btn:hover{transform:translateY(-2px)}
+
+    .hero-card{
+      position:relative;min-height:390px;border-radius:28px;
+      border:1px solid var(--line);background:
+      linear-gradient(145deg,rgba(47,128,255,.18),rgba(255,255,255,.025)),
+      var(--card);
+      box-shadow:var(--shadow);overflow:hidden;
+      display:grid;place-items:center;
+    }
+    .hero-card::before{
+      content:"";position:absolute;width:250px;height:250px;border-radius:50%;
+      background:rgba(47,128,255,.18);filter:blur(25px);top:-80px;right:-70px;
+    }
+    .hero-logo{
+      position:relative;text-align:center;padding:35px;
+    }
+    .hero-logo .big-mark{
+      width:100px;height:100px;margin:0 auto 20px;border-radius:28px;
+      display:grid;place-items:center;font-size:40px;font-weight:900;
+      background:linear-gradient(135deg,var(--blue),var(--blue2));
+      box-shadow:0 20px 50px rgba(47,128,255,.28);
+    }
+    .hero-logo h2{font-size:27px}
+    .hero-logo p{color:var(--muted);margin-top:5px}
+
+    /* SECTIONS */
+    section{padding:80px 0}
+    .section-head{max-width:700px;margin-bottom:35px}
+    .kicker{
+      color:#82c8ff;text-transform:uppercase;letter-spacing:2px;
+      font-size:12px;font-weight:900;margin-bottom:8px;
+    }
+    h2{font-size:clamp(30px,5vw,44px);line-height:1.1;margin-bottom:12px}
+    .section-head p{color:var(--muted)}
+
+    .about-grid,.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+    .card{
+      background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.018));
+      border:1px solid var(--line);border-radius:var(--radius);
+      padding:28px;box-shadow:var(--shadow);
+    }
+    .facts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+    .fact{padding:18px;border-radius:14px;background:rgba(255,255,255,.035);border:1px solid var(--line)}
+    .fact strong{display:block;font-size:20px}
+    .fact span{color:var(--muted);font-size:13px}
+
+    /* SERVICES */
+    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .service{transition:.2s}
+    .service:hover{transform:translateY(-4px);border-color:rgba(86,180,255,.35)}
+    .icon{
+      width:46px;height:46px;border-radius:13px;display:grid;place-items:center;
+      background:rgba(47,128,255,.12);color:#83caff;font-size:21px;margin-bottom:18px;
+    }
+    .service h3{font-size:18px;margin-bottom:7px}
+    .service p{font-size:14px;color:var(--muted)}
+    .price{margin-top:16px;color:#8ed1ff;font-weight:900}
+
+    /* GALLERY */
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .gallery-item{
+      min-height:250px;border-radius:18px;overflow:hidden;
+      border:1px solid var(--line);background:var(--card);
+      position:relative;
+    }
+    .gallery-item img{width:100%;height:100%;object-fit:cover}
+    .gallery-placeholder{
+      height:100%;min-height:250px;display:grid;place-items:center;
+      text-align:center;padding:20px;color:var(--muted);
+      background:linear-gradient(135deg,#0d1b30,#132a45);
+    }
+    .gallery-placeholder strong{display:block;color:white;font-size:18px;margin-bottom:5px}
+
+
+    .portfolio-photo{display:block;cursor:pointer;transition:transform .2s,box-shadow .2s}
+    .portfolio-photo:hover{transform:translateY(-4px);box-shadow:0 18px 45px rgba(0,0,0,.35)}
+    .portfolio-photo img{transition:transform .35s}
+    .portfolio-photo:hover img{transform:scale(1.03)}
+
+    /* PRICING */
+    .pricing-list{display:grid;gap:10px}
+    .price-row{
+      display:flex;justify-content:space-between;gap:15px;
+      padding:15px 0;border-bottom:1px solid var(--line);
+    }
+    .price-row:last-child{border-bottom:0}
+    .price-row span:last-child{color:#8ed1ff;font-weight:900;white-space:nowrap}
+
+    /* CONTACT */
+    .contact-list{display:grid;gap:13px}
+    .contact-item{
+      display:flex;gap:14px;align-items:flex-start;
+      padding:16px;border:1px solid var(--line);border-radius:14px;
+      background:rgba(255,255,255,.025)
+    }
+    .contact-item .icon{flex:0 0 42px;margin:0;width:42px;height:42px}
+    .contact-item small{color:var(--muted);display:block}
+    .contact-item strong{font-size:15px}
+
+    footer{padding:35px 0;border-top:1px solid var(--line);color:var(--muted)}
+    .footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .footer-row strong{color:white}
+    .tiny{font-size:12px;margin-top:7px}
+
+    @media(max-width:850px){
+      .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+      .hero{padding-top:65px}
+      .hero-card{min-height:300px}
+      .service-grid{grid-template-columns:1fr 1fr}
+      .gallery-grid{grid-template-columns:1fr 1fr}
+      .nav-links{
+        display:none;position:absolute;left:4%;right:4%;top:72px;
+        padding:15px;flex-direction:column;gap:0;
+        background:#0b1628;border:1px solid var(--line);border-radius:14px;
+      }
+      .nav-links.open{display:flex}
+      .nav-links a{padding:12px}
+      .menu{display:block}
+    }
+    @media(max-width:560px){
+      .service-grid,.gallery-grid,.facts{grid-template-columns:1fr}
+      h1{letter-spacing:-1.5px}
+      section{padding:60px 0}
+      .hero{padding:55px 0}
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home">
+      <div class="brand-mark">H</div>
+      <span>Himadri Raj Graphics</span>
+    </a>
+
+    <button class="menu" id="menuBtn" aria-label="Open menu">☰</button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Portfolio</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">✦ Creative Graphic Design</div>
+        <h1>Designs that make your <span class="accent">brand stand out.</span></h1>
+        <p>
+          Welcome to Himadri Raj Graphics — creative and professional graphic
+          design services for social media, businesses, events and personal brands.
+        </p>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="#services">Explore Services</a>
+          <a class="btn btn-secondary" href="https://wa.me/919647294970?text=Hi%20Himadri%2C%20I%20want%20to%20discuss%20a%20design%20project." target="_blank" rel="noopener">WhatsApp Me</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-logo">
+          <div class="big-mark">HR</div>
+          <h2>Himadri Raj Graphics</h2>
+          <p>Creative • Professional • Custom</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">About</div>
+        <h2>Creative design with a personal touch.</h2>
+        <p>Every project is designed with attention to detail, clean visuals and your brand's purpose.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="card">
+          <p>
+            Hi, I'm Himadri. I create custom graphic designs for businesses,
+            creators, events and individuals. From social media creatives to
+            promotional graphics, my goal is to make every design clear,
+            attractive and memorable.
+          </p>
+
+          <div class="facts">
+            <div class="fact"><strong>Custom</strong><span>Designs made for your needs</span></div>
+            <div class="fact"><strong>Creative</strong><span>Modern and eye-catching visuals</span></div>
+            <div class="fact"><strong>Flexible</strong><span>Suitable for different platforms</span></div>
+            <div class="fact"><strong>Direct</strong><span>Easy communication with the designer</span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="kicker">Why choose me</div>
+          <h3 style="font-size:26px;margin-bottom:12px;">Simple process. Professional result.</h3>
+          <p style="color:var(--muted);">
+            Tell me what you need, share your idea or reference, and I'll turn
+            it into a polished visual that fits your purpose.
+          </p>
+
+          <div style="margin-top:24px;display:grid;gap:12px;">
+            <div>✓ Clear communication</div>
+            <div>✓ Custom design concepts</div>
+            <div>✓ Social-media-ready formats</div>
+            <div>✓ Revisions based on your requirements</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Services</div>
+        <h2>Design services for your next idea.</h2>
+        <p>These are sample services. We can change names and prices later from the admin system.</p>
+      </div>
+
+      <div class="service-grid">
+        <div class="card service">
+          <div class="icon">▣</div>
+          <h3>Social Media Post</h3>
+          <p>Professional creatives for Facebook, Instagram and other social platforms.</p>
+          <div class="price">Starting ₹199</div>
+        </div>
+
+        <div class="card service">
+          <div class="icon">▤</div>
+          <h3>Poster Design</h3>
+          <p>Promotional and event posters designed to attract attention.</p>
+          <div class="price">Starting ₹299</div>
+        </div>
+
+        <div class="card service">
+          <div class="icon">◆</div>
+          <h3>Logo Design</h3>
+          <p>Clean and memorable logos for businesses, creators and personal brands.</p>
+          <div class="price">Starting ₹499</div>
+        </div>
+
+        <div class="card service">
+          <div class="icon">▥</div>
+          <h3>Banner Design</h3>
+          <p>Digital banners and promotional graphics for campaigns and businesses.</p>
+          <div class="price">Starting ₹399</div>
+        </div>
+
+        <div class="card service">
+          <div class="icon">▱</div>
+          <h3>YouTube Thumbnail</h3>
+          <p>Attention-grabbing thumbnails designed for better visual impact.</p>
+          <div class="price">Starting ₹199</div>
+        </div>
+
+        <div class="card service">
+          <div class="icon">✦</div>
+          <h3>Custom Graphic Design</h3>
+          <p>Have a different idea? Tell me your requirement and let's create it.</p>
+          <div class="price">Let's discuss</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Portfolio</div>
+        <h2>Selected creative work.</h2>
+        <p>Your actual design images can be uploaded here later through the admin panel.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item"><div class="gallery-placeholder"><div><strong>Design Sample 01</strong><span>Upload your work here</span></div></div></div>
+        <div class="gallery-item"><div class="gallery-placeholder"><div><strong>Design Sample 02</strong><span>Upload your work here</span></div></div></div>
+        <div class="gallery-item"><div class="gallery-placeholder"><div><strong>Design Sample 03</strong><span>Upload your work here</span></div></div></div>
+        <div class="gallery-item"><div class="gallery-placeholder"><div><strong>Design Sample 04</strong><span>Upload your work here</span></div></div></div>
+        <div class="gallery-item"><div class="gallery-placeholder"><div><strong>Design Sample 05</strong><span>Upload your work here</span></div></div></div>
+        <div class="gallery-item"><div class="gallery-placeholder"><div><strong>Design Sample 06</strong><span>Upload your work here</span></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Pricing</div>
+        <h2>Simple, transparent pricing.</h2>
+        <p>Final pricing may vary depending on the complexity and requirements of the project.</p>
+      </div>
+
+      <div class="card pricing-list">
+        <div class="price-row"><span>Social Media Post</span><span>₹199+</span></div>
+        <div class="price-row"><span>Poster Design</span><span>₹299+</span></div>
+        <div class="price-row"><span>Logo Design</span><span>₹499+</span></div>
+        <div class="price-row"><span>Banner Design</span><span>₹399+</span></div>
+        <div class="price-row"><span>YouTube Thumbnail</span><span>₹199+</span></div>
+        <div class="price-row"><span>Custom Graphic Design</span><span>Contact for quote</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Contact</div>
+        <h2>Let's design something together.</h2>
+        <p>Have a project in mind? Get in touch and share your requirements.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="card">
+          <div class="contact-list">
+            <a class="contact-item" href="https://wa.me/919647294970" target="_blank" rel="noopener">
+              <div class="icon">◉</div>
+              <div><small>WhatsApp</small><strong>+91 96472 94970</strong></div>
+            </a>
+
+            <a class="contact-item" href="https://instagram.com/himadri.raj.graphics" target="_blank" rel="noopener">
+              <div class="icon">◎</div>
+              <div><small>Instagram</small><strong>@himadri.raj.graphics</strong></div>
+            </a>
+
+            <div class="contact-item">
+              <div class="icon">⌖</div>
+              <div><small>Location</small><strong>West Bengal, India</strong></div>
+            </div>
+
+            <div class="contact-item">
+              <div class="icon">✦</div>
+              <div><small>Business</small><strong>Himadri Raj Graphics</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="font-size:28px;margin-bottom:10px;">Ready to start?</h3>
+          <p style="color:var(--muted);">
+            Send your design requirement on WhatsApp. You can share your text,
+            reference image, preferred size and deadline.
+          </p>
+          <a class="btn btn-primary" style="margin-top:25px;width:100%;" href="https://wa.me/919647294970?text=Hi%20Himadri%2C%20I%20want%20a%20custom%20graphic%20design." target="_blank" rel="noopener">
+            Start a WhatsApp Chat
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <div>
+      <strong>Himadri Raj Graphics</strong>
+      <div class="tiny">Creative designs that make your brand stand out.</div>
+    </div>
+    <div class="tiny">© <span id="year"></span> Himadri Raj Graphics. All rights reserved.</div>
+  </div>
+</footer>
+
+
+<script>
+  /* SUPABASE PORTFOLIO SETTINGS
+     Paste ONLY your Project URL and PUBLISHABLE key here.
+     Never put a secret/service-role key in this HTML file.
+  */
+  const SUPABASE_URL = "https://ctqzsendldeqozvusosh.supabase.co";
+  const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_C4FgkfrbAu4YSgm219KNlw_eOiBCe6Z";
+  const SUPABASE_BUCKET = "Portfolio";
+
+  async function loadPortfolioFromSupabase() {
+    const grid = document.querySelector(".gallery-grid");
+    if (!grid || SUPABASE_URL.includes("PASTE_") || SUPABASE_PUBLISHABLE_KEY.includes("PASTE_")) return;
+
+    try {
+      const response = await fetch(
+        `${SUPABASE_URL}/storage/v1/object/list/${encodeURIComponent(SUPABASE_BUCKET)}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "apikey": SUPABASE_PUBLISHABLE_KEY,
+            "Authorization": `Bearer ${SUPABASE_PUBLISHABLE_KEY}`
+          },
+          body: JSON.stringify({
+            prefix: "",
+            limit: 100,
+            offset: 0,
+            sortBy: { column: "created_at", order: "desc" }
+          })
+        }
+      );
+
+      if (!response.ok) throw new Error("Supabase Storage list failed: " + response.status);
+
+      const files = await response.json();
+      const images = (Array.isArray(files) ? files : []).filter(file =>
+        /\.(jpg|jpeg|png|webp|gif|avif)$/i.test(file.name || "")
+      );
+
+      if (!images.length) return;
+
+      grid.innerHTML = images.map(file => {
+        const path = (file.name || "").split("/").map(encodeURIComponent).join("/");
+        const url = `${SUPABASE_URL}/storage/v1/object/public/${encodeURIComponent(SUPABASE_BUCKET)}/${path}`;
+        const title = (file.name || "Portfolio image")
+          .replace(/[-_]/g, " ")
+          .replace(/\.[^.]+$/, "");
+
+        return `<a class="gallery-item portfolio-photo" href="${url}" target="_blank" rel="noopener">
+                  <img src="${url}" alt="${title}" loading="lazy">
+                </a>`;
+      }).join("");
+    } catch (error) {
+      console.warn("Supabase portfolio could not be loaded:", error);
+    }
+  }
+
+  loadPortfolioFromSupabase();
+</script>
+
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const navLinks = document.getElementById("navLinks");
+
+  menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+  });
+
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => navLinks.classList.remove("open"));
+  });
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
