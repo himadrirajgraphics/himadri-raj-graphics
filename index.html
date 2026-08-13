@@ -378,12 +378,18 @@
       </div>
 
       <div class="gallery-grid">
-        <div class="gallery-item"><div class="gallery-placeholder"><div><strong>Design Sample 01</strong><span>Upload your work here</span></div></div></div>
-        <div class="gallery-item"><div class="gallery-placeholder"><div><strong>Design Sample 02</strong><span>Upload your work here</span></div></div></div>
-        <div class="gallery-item"><div class="gallery-placeholder"><div><strong>Design Sample 03</strong><span>Upload your work here</span></div></div></div>
-        <div class="gallery-item"><div class="gallery-placeholder"><div><strong>Design Sample 04</strong><span>Upload your work here</span></div></div></div>
-        <div class="gallery-item"><div class="gallery-placeholder"><div><strong>Design Sample 05</strong><span>Upload your work here</span></div></div></div>
-        <div class="gallery-item"><div class="gallery-placeholder"><div><strong>Design Sample 06</strong><span>Upload your work here</span></div></div></div>
+        <a class="gallery-item portfolio-photo" href="https://raw.githubusercontent.com/himadrirajgraphics/himadri-raj-graphics/main/IMG-20260730-WA0001.jpg" target="_blank" rel="noopener">
+          <img src="https://raw.githubusercontent.com/himadrirajgraphics/himadri-raj-graphics/main/IMG-20260730-WA0001.jpg" alt="Himadri Raj Graphics portfolio design 1" loading="lazy">
+        </a>
+        <a class="gallery-item portfolio-photo" href="https://raw.githubusercontent.com/himadrirajgraphics/himadri-raj-graphics/main/IMG-20260807-WA0007.jpg" target="_blank" rel="noopener">
+          <img src="https://raw.githubusercontent.com/himadrirajgraphics/himadri-raj-graphics/main/IMG-20260807-WA0007.jpg" alt="Himadri Raj Graphics portfolio design 2" loading="lazy">
+        </a>
+        <a class="gallery-item portfolio-photo" href="https://raw.githubusercontent.com/himadrirajgraphics/himadri-raj-graphics/main/IMG-20260809-WA0000.jpg" target="_blank" rel="noopener">
+          <img src="https://raw.githubusercontent.com/himadrirajgraphics/himadri-raj-graphics/main/IMG-20260809-WA0000.jpg" alt="Himadri Raj Graphics portfolio design 3" loading="lazy">
+        </a>
+        <a class="gallery-item portfolio-photo" href="https://raw.githubusercontent.com/himadrirajgraphics/himadri-raj-graphics/main/IMG-20260812-WA0017.jpg" target="_blank" rel="noopener">
+          <img src="https://raw.githubusercontent.com/himadrirajgraphics/himadri-raj-graphics/main/IMG-20260812-WA0017.jpg" alt="Himadri Raj Graphics portfolio design 4" loading="lazy">
+        </a>
       </div>
     </div>
   </section>
@@ -430,6 +436,11 @@
               <div><small>Instagram</small><strong>@himadri.raj.graphics</strong></div>
             </a>
 
+            <a class="contact-item" href="https://www.facebook.com/share/1971w9H1dc/" target="_blank" rel="noopener">
+              <div class="icon">f</div>
+              <div><small>Facebook</small><strong>Himadri Raj Graphics</strong></div>
+            </a>
+
             <div class="contact-item">
               <div class="icon">⌖</div>
               <div><small>Location</small><strong>West Bengal, India</strong></div>
@@ -469,63 +480,7 @@
 
 
 <script>
-  /* SUPABASE PORTFOLIO SETTINGS
-     Paste ONLY your Project URL and PUBLISHABLE key here.
-     Never put a secret/service-role key in this HTML file.
-  */
-  const SUPABASE_URL = "https://ctqzsendldeqozvusosh.supabase.co";
-  const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_C4FgkfrbAu4YSgm219KNlw_eOiBCe6Z";
-  const SUPABASE_BUCKET = "Portfolio";
-
-  async function loadPortfolioFromSupabase() {
-    const grid = document.querySelector(".gallery-grid");
-    if (!grid || SUPABASE_URL.includes("PASTE_") || SUPABASE_PUBLISHABLE_KEY.includes("PASTE_")) return;
-
-    try {
-      const response = await fetch(
-        `${SUPABASE_URL}/storage/v1/object/list/${encodeURIComponent(SUPABASE_BUCKET)}`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "apikey": SUPABASE_PUBLISHABLE_KEY,
-            "Authorization": `Bearer ${SUPABASE_PUBLISHABLE_KEY}`
-          },
-          body: JSON.stringify({
-            prefix: "",
-            limit: 100,
-            offset: 0,
-            sortBy: { column: "created_at", order: "desc" }
-          })
-        }
-      );
-
-      if (!response.ok) throw new Error("Supabase Storage list failed: " + response.status);
-
-      const files = await response.json();
-      const images = (Array.isArray(files) ? files : []).filter(file =>
-        /\.(jpg|jpeg|png|webp|gif|avif)$/i.test(file.name || "")
-      );
-
-      if (!images.length) return;
-
-      grid.innerHTML = images.map(file => {
-        const path = (file.name || "").split("/").map(encodeURIComponent).join("/");
-        const url = `${SUPABASE_URL}/storage/v1/object/public/${encodeURIComponent(SUPABASE_BUCKET)}/${path}`;
-        const title = (file.name || "Portfolio image")
-          .replace(/[-_]/g, " ")
-          .replace(/\.[^.]+$/, "");
-
-        return `<a class="gallery-item portfolio-photo" href="${url}" target="_blank" rel="noopener">
-                  <img src="${url}" alt="${title}" loading="lazy">
-                </a>`;
-      }).join("");
-    } catch (error) {
-      console.warn("Supabase portfolio could not be loaded:", error);
-    }
-  }
-
-  loadPortfolioFromSupabase();
+  /* Portfolio images are loaded directly from the GitHub repository. */
 </script>
 
 <script>
